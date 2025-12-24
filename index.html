@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merry Christmas</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Meie+Script&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Georgia', serif;
+    background: url('./background.jpg') center/cover no-repeat fixed;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.25);
+    z-index: 0;
+  }
+
+  .page {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+
+.top-decor {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 10px;
+
+
+}
+/* 
+.candy-garland {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+}
+
+.candy {
+  width: 30px;
+  animation: floatWave 4s ease-in-out infinite;
+}
+
+.candy:nth-child(1) { animation-delay: 0s; }
+.candy:nth-child(2) { animation-delay: 0.3s; }
+.candy:nth-child(3) { animation-delay: 0.6s; }
+.candy:nth-child(4) { animation-delay: 0.9s; }
+.candy:nth-child(5) { animation-delay: 1.2s; }
+
+@keyframes floatWave {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+} */
+
+
+
+
+/* Reindeer Icons */
+.reindeer {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 290px;
+}
+
+.reindeer-icon {
+  width: 65px;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+  .card {
+    text-align: center;
+    /* padding: 22px 10px; */
+    max-width: 420px;
+    width: 90%;
+  }
+
+  .tree {
+    width: 180px;
+    margin: 0 auto 10px;
+    display: block;
+  }
+
+  h1 {
+    font-family: "Meie Script", cursive;
+    font-size: 55px;
+    color: maroon;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 16px;
+    color: #4b2e2e;
+    line-height: 1.6;
+    margin: 8px 0;
+  }
+
+  .signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+    font-style: normal;
+    margin-top: 15px;
+  }
+
+  /* Santa */
+  .santa {
+    width: 250px;
+    margin: 20px auto 10px;
+    display: block;
+    transform: rotate(-10deg);
+    animation: bounce 2s infinite ease-in-out;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0) rotate(-10deg); }
+    50% { transform: translateY(-10px) rotate(-10deg); }
+  }
+
+  /* Gift */
+  .gift-wrapper {
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .gift {
+    width: 200px;
+    height: 200px;
+    transition: transform 0.3s;
+  }
+
+  .gift:hover {
+    transform: scale(1.1) rotate(-5deg);
+  }
+
+  .open-text {
+    font-size: 16px;
+    color: #d00707;
+    margin-top: 5px;
+  }
+
+  /* Popup */
+  .popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  .popup-content {
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    max-width: 320px;
+    width: 85%;
+    animation: pop 0.5s ease forwards;
+    position: relative;
+  }
+
+  .popup-content img {
+    width: 100%;
+    border-radius: 16px;
+  }
+
+  .close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: maroon;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  @keyframes pop {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  /* Snowflakes */
+  .snow {
+    position: fixed;
+    top: -10px;
+    color: rgb(115, 213, 216);
+    pointer-events: none;
+    animation: fall linear infinite;
+    z-index: 1;
+    filter: blur(0.4px);
+  }
+
+  @keyframes fall {
+    to { transform: translateY(120vh) translateX(20px); }
+  }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 40px; }
+    .tree { width: 135px; }
+    .santa { width: 180px; }
+    .gift { width: 150px; height: 150px; }
+    .signature { font-size: 20px; }
+    p { font-size: 14px; }
+  }
+</style>
+</head>
+
+<body>
+   <audio id="jingleAudio" src="./Bobby Helms - Jingle Bell Rock Lyrics.mp3"  autoplay loop  ></audio>
+<div class="top-decor">
+  <!-- Candy garland -->
+  <!-- Small reindeer icons -->
+  <div class="reindeer">
+    <img src="./r2-removebg-preview.png" class="reindeer-icon" alt="Reindeer">
+    
+    <img src="./r1-removebg-preview.png" class="reindeer-icon" alt="Reindeer">
+  </div>
+</div>
+
+<div class="page">
+  <div class="card">
+    <!-- Tree -->
+    <img src="./christmas_tree-removebg-preview.png" alt="Christmas Tree" class="tree">
+
+    <!-- Heading -->
+    <h1>Merry Christmas</h1>
+
+    <!-- Message -->
+    <p>Wishing you a joyous holiday season filled with love, laughter, and cherished moments. May your Christmas be as wonderful as you are!</p>
+
+    <!-- Signature -->
+    <p class="signature">With love, Pratik & Dikshya</p>
+
+    <!-- Santa -->
+    <img src="./santa-removebg-preview.png" class="santa" alt="Santa pointing">
+<div class="open-text"> ! Warning: silly surprise ahead </div>
+    <!-- Gift -->
+    <div class="gift-wrapper" onclick="openGift()">
+      <img src="./gift-removebg-preview.png" class="gift" alt="Gift">
+      
+    </div>
+  </div>
+</div>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <div class="close" onclick="closeGift()">✕</div>
+    <img src="./Gemini_Generated_Image_lu6ltrlu6ltrlu6l.png" alt="Funny gift">
+  </div>
+</div>
+
+<script>
+  // Open / Close Gift Popup
+function openGift() {
+  // Show popup
+  document.getElementById("popup").style.display = "flex";
+
+  // Play jingle sound
+  const jingle = document.getElementById("jingle");
+  if (jingle) jingle.play();
+
+  // Trigger confetti
+  createConfetti();
+}
+
+  function closeGift() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  // Snowflakes
+  for (let i = 0; i < 90; i++) {
+    const snow = document.createElement("div");
+    snow.className = "snow";
+    snow.innerHTML = "❄";
+    snow.style.left = Math.random() * 100 + "vw";
+    snow.style.animationDuration = (Math.random() * 6 + 6) + "s"; // slower dreamy
+    snow.style.opacity = Math.random() * 0.6 + 0.3;
+    snow.style.fontSize = (Math.random() * 14 + 10) + "px";
+    document.body.appendChild(snow);
+  }
+
+
+  // Confetti generator
+function createConfetti() {
+  const colors = ["#ff0a54","#ff477e","#ff7096","#ff85a1","#fbb1b1","#f9bec7"];
+  for (let i = 0; i < 100; i++) {
+    const confetti = document.createElement("div");
+    confetti.style.position = "fixed";
+    confetti.style.width = confetti.style.height = Math.random() * 8 + 4 + "px";
+    confetti.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.top = "-10px";
+    confetti.style.opacity = 0.9;
+    confetti.style.zIndex = 15;
+    confetti.style.borderRadius = "50%";
+    confetti.style.pointerEvents = "none";
+    confetti.style.transform = `rotate(${Math.random()*360}deg)`;
+    confetti.style.transition = "transform 2s linear, top 2s linear";
+    document.body.appendChild(confetti);
+
+    setTimeout(() => {
+      confetti.style.top = Math.random()*80 + 60 + "vh";
+      confetti.style.transform += " rotate(720deg)";
+    }, 50);
+
+    setTimeout(() => document.body.removeChild(confetti), 2500);
+  }
+}
+
+
+ window.addEventListener('load', () => {
+    const audio = document.getElementById('jingleAudio');
+    audio.volume = 0.5; // optional: reduce volume
+    audio.play().catch(() => {
+      console.log("Autoplay blocked, will play on user interaction");
+    });
+  });
+
+  // Fallback: play when user clicks anywhere
+  document.body.addEventListener('click', () => {
+    const audio = document.getElementById('jingleAudio');
+    if (audio.paused) audio.play();
+  });
+</script>
+<audio id="jingle" src="./25 confetti Sound effect.mp3"></audio>
+
+
+
+</body>
+</html>
